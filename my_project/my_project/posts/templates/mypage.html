@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}마이페이지{% endblock %}
+
+{% block content %}
+    <!--전체 콘텐츠 부분-->
+    <div class="mypage-content">
+        <!--Me-->
+        <div style="margin-top: 50px; margin-bottom: 50px;">
+            <div style="display: flex; justify-content: space-between;">
+                <h1>Me</h1>
+                <button class="sub-btn">Logout</button>
+            </div>
+            <hr>
+            <div class="container-me">
+                <img src="{% static 'img/profile.png' %}" class="profile-img">
+                <div style="margin-left: 20px;">
+                    <p style="color: #77A5FF; font-weight: bold; font-size: 25px; margin-bottom: 10px;" >chae-neey</p>
+                    <p style="color: #ACACAC; font-weight: bold">여행을 좋아하는 대학생</p>
+                    <div>
+                        <button class="trip-btn">군산</button>
+                        <button class="trip-btn">여수</button>
+                        <button class="trip-btn">경주</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--My Trip-->
+        <div style="margin-bottom: 50px;">
+            <div style="display: flex; justify-content: space-between;">
+                <h1>My trip</h1>
+                <button class="sub-btn" id="gotomytrip">더보기</button>
+            </div>
+            <hr>
+            <div class="mytrip-content-card">
+                <button class="post-btn">
+                    <div class="container-mytrip">
+                        <div>
+                            <img src="{% static 'img/trip1.png' %}" class="trip-img">
+                        </div>
+                        <div>
+                            <p style="color: #77A5FF; font-weight: bold; font-size: 17px; ">7월의 경주여행</p>
+                            <p style="color: #ACACAC; font-weight: bold; font-size: 14px;">23.07.16 - 23.07.18</p>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="post-btn">
+                    <div class="container-mytrip">
+                        <div>
+                            <img src="{% static 'img/trip2.png' %}" class="trip-img"> 
+                        </div>
+                        <div>
+                            <p style="color: #77A5FF; font-weight: bold; font-size: 17px; padding-right: 10px;">여~수밤바다!</p>
+                            <p style="color: #ACACAC; font-weight: bold; font-size: 14px; padding-right: 10px;">23.02.25 - 23.02.26</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!--Like-->
+        <div style="margin-bottom: 100px;">
+            <div style="display: flex; justify-content: space-between;">
+                <h1>Like</h1>
+                <button class="sub-btn" id="gotolike">더보기</button>
+            </div>
+            <hr>
+            <div class="mytrip-content-card">
+                <button class="post-btn">
+                    <div class="container-mytrip">
+                        <div>
+                            <img src="{% static 'img/like1.png' %}" class="trip-img">
+                        </div>
+                        <div>
+                            <p style="color: #77A5FF; font-weight: bold; font-size: 17px; padding-right: 10px;">맛집탐방 그 자체였던 경주여행</p>
+                            <p style="color: #ACACAC; font-weight: bold; font-size: 14px;">23.07.10 - 23.07.12</p>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="post-btn">
+                    <div class="container-mytrip">
+                        <div>
+                            <img src="{% static 'img/like2.png' %}" class="trip-img">
+                        </div>
+                        <div>
+                            <p style="color: #77A5FF; font-weight: bold; font-size: 17px; padding-right: 10px;">경주 인생샷 꿀스팟 공유</p>
+                            <p style="color: #ACACAC; font-weight: bold; font-size: 14px;">23.03.14 - 23.03.15</p>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

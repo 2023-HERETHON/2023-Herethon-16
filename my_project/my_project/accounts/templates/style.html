@@ -1,0 +1,172 @@
+<style>
+        
+    body {
+        margin: 0px;
+        background-color: #FFF9F1;
+    }
+
+    button{
+        border:none;
+        background-color: white;
+    }
+
+    .head-menu{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 15px;
+        background-color: white;
+    }
+
+    .title{
+        color:#77A5FF;
+        font-weight: bold;
+        font-size: 23px;
+    }
+
+    .menu-btn{
+        justify-content: flex-end;
+    }
+
+    .btn {
+        color:#77A5FF;
+        font-weight: bold;
+        font-size: 19px;
+        margin-left: 20px;
+    }
+
+    .btn:hover {
+        color: #3a68c3;
+
+    }
+
+    .main-view {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 80px;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(15px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
+
+    img {
+        width: 500px;
+        transform: translatey(0px);
+        animation: float 5s ease-in-out infinite;
+    }
+
+
+    .main-text {
+        color: #77A5FF;
+    }
+    
+/* mypage 부분 시작 */
+
+    /* Me, My Trip, Like 타이틀 */
+    h1 {
+        color: #1A73E8;
+    }
+
+    /*h1 옆에 버튼들*/
+    .sub-btn {
+        background-color: transparent;
+        color: #ACACAC;
+        font-weight: bold;
+        font-size: 17px;
+        position: relative;
+        top:20px;
+    }
+
+    .sub-btn:hover {
+        color: #767676;
+    }
+
+    /* 구분선 스타일 */
+    hr {
+        width: 600px;
+        border: none;
+        background-color: #E4E4E4;
+        height: 1px;
+        margin-bottom: 30px;
+    }
+
+
+    /* 전체 콘텐츠 - 가운데 정렬하려고 만든 div */
+    .mypage-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    /* Me 부분 */
+
+    .container-me {
+        width: 600px;
+        height: 150px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px rgb(159, 159, 159);
+        display: flex;
+        padding-bottom: 15px;
+    }
+
+    .profile-img {
+        border-radius: 100%;
+        width: 125px;
+        height: 125px;
+        padding: 20px;
+        margin-left: 10px;
+    }
+
+
+
+    /* My Trip + Like 부분*/
+    .trip-btn {
+        border-radius: 20px;
+        background-color:#77A5FF;
+        color: white;
+        font-weight: bold;
+    }
+
+
+    .mytrip-content-card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container-mytrip {
+        width: 290px;
+        height: 140px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px rgb(159, 159, 159);
+        margin-right: 10px;
+        margin-left: 10px;
+        display: flex;
+    }
+
+    .trip-img {
+        border-radius: 10%;
+        width: 110px;
+        height: 110px;
+        padding: 15px;
+    }
+
+
+    .post-btn {
+        background-color: transparent;
+    }
+
+</style>
