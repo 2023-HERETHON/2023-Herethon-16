@@ -1,0 +1,126 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #container {
+        position: relative;
+        width: 390px;
+        height: 844px;
+        background: #eaeaea;
+        margin: auto;
+      }
+      #greenBox {
+        position: relative;
+        top: 150px;
+        width: 299px;
+        height: 286px;
+        margin: auto;
+        flex-shrink: 0;
+        background: #aad6a0;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+      #textBox {
+        position: relative;
+        display: flex;
+        width: 90px;
+        height: 31px;
+        flex-direction: column;
+        flex-shrink: 0;
+        color: #4c7343;
+        font-size: 24px;
+        font-family: Noto Sans;
+        font-weight: 900;
+        margin: auto;
+        top: 15px;
+        margin-bottom: 15px;
+      }
+      #idText,
+      #pwText {
+        position: relative;
+        display: flex;
+        width: 58px;
+        height: 20px;
+        flex-direction: column;
+        flex-shrink: 0;
+        color: #4c7343;
+        font-size: 20px;
+        font-family: Noto Sans;
+        font-weight: 500;
+        margin-left: 10px;
+      }
+      #id,
+      #passwd {
+        position: relative;
+        width: 231px;
+        height: 31px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        background: #fff;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+
+      #loginBtn {
+        position: relative;
+        width: 241px;
+        height: 29px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #4c7343;
+        left: 25px;
+      }
+      #loginText {
+        position: relative;
+        color: #fff;
+        font-size: 15px;
+        font-family: Noto Sans;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 3px;
+      }
+      #search {
+        margin-left: 20px;
+      }
+      a {
+        text-decoration-line:none;
+      }
+    </style>
+    <div id="container">
+      <div id="greenBox">
+        <div id="textBox">로그인</div>
+
+        <form id="form" method="POST">
+          {% csrf_token %}
+          <div id="idText">ID</div>
+          <input type="text" id="id" name="id" />
+          <div id="pwText">PW</div>
+          <input type="password" id="passwd" name="passwd" />
+          <input id="loginBtn" type="submit" value="로그인 하기"/>
+        
+        <br />
+        <br />
+        <a href="{% url 'signup' %}">
+          <span id="signup">회원 가입 하기</span>
+        </a>
+          <span id="search">아이디/비밀번호 찾기</span>
+          <a href="{% provider_login_url 'google' %}">
+            <i>구글로그인</i>
+          </a>
+          <a href="{% provider_login_url 'kakao' method='oauth2' %}">
+            <i>카카오톡 회원가입</i>
+          </a>
+        </form>
+      </div>
+    </div>
+    <script src=""></script>
+  </body>
+</html>
