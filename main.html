@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            margin: 0px;
+            background-color: #FFF9F1;
+        }
+
+        button{
+            border:none;
+            background-color: white;
+        }
+
+        .head-menu{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-bottom: 15px;
+            background-color: white;
+        }
+
+        .title{
+            color:#77A5FF;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .menu-btn{
+            justify-content: flex-end;
+        }
+
+        .btn {
+            color:#77A5FF;
+            font-weight: bold;
+            font-size: 19px;
+            margin-left: 20px;
+        }
+
+        .btn:hover {
+            color: #3a68c3;
+
+        }
+
+        .main-view {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 80px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(15px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+
+        img {
+            width: 500px;
+            transform: translatey(0px);
+            animation: float 5s ease-in-out infinite;
+        }
+
+
+        .main-text {
+            color: #77A5FF;
+        }
+        
+
+    </style>
+</head>
+
+
+<body>
+    <div class="head-menu">
+        <div>
+            <button class="title">서비스명</button>
+        </div>
+        <div class="menu-btn">
+            <button class="btn">About us</button>
+            <button class="btn">Community</button>
+            <button class="btn">Women-zone</button>
+            <button class="btn" id="gotomypage">My page</button>
+        </div>
+    </div>
+
+    <div class="main-view">
+
+        <img src="img/card.png">
+
+
+        <div class="main-text">
+            <h2 style="position: relative; top: 70px; right: 120px;">당신의 즐거운 여행을 위해</h2>
+            <h2 style="position: relative; top: 60px; right: 70px;">당신의 안전한 여행을 위해</h2>
+            <h1 style="position: relative; top: 80px">서비스명</h1>
+        </div>
+
+    </div>
+    
+</body>
+
+<script>
+    const GotoMypage = document.getElementById("gotomypage");
+
+    GotoMypage.addEventListener("click", function() {
+    window.location.href = "mypage.html";
+});
+</script>
+</html>
