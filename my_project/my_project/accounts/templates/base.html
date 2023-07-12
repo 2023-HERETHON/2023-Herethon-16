@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스명 | {% block title %}{% endblock %}</title>
+    
+    {% include 'style.html' %}
+    
+</head>
+
+<!-- html body 시작 -->
+<body>
+    <div class="head-menu">
+        <div>
+            <button class="title">서비스명</button>
+        </div>
+        <div class="menu-btn">
+            <button class="btn">About us</button>
+            <button class="btn">Community</button>
+            <button class="btn">Women-zone</button>
+            <button class="btn" id="gotomypage">My page</button>
+        </div>
+    </div>
+
+
+    {% block content %}
+    <!-- 페이지별 상세 -->
+    {% endblock %}
+
+
+</body>
+
+<script>
+    /* main페이지 */
+    const GotoMypage = document.getElementById("gotomypage");
+    /* mypage, like 관련 */
+    const GotomyTrip = document.getElementById("gotomytrip");
+    const GotoLike = document.getElementById("gotolike");
+    const GotoMain = document.getElementById("gotomain");
+    const GotoPostBtn = document.querySelectorAll(".post-btn");
+
+
+    GotoMypage.addEventListener("click", function() {
+    window.location.href = "mypage.html";
+    });
+    // my page 관련 
+    GotomyTrip.addEventListener("click", function() {
+        window.location.href = "mytrip.html";
+    })
+
+    GotoLike.addEventListener("click", function(){
+        window.location.href = "like.html";
+    })
+
+    GotoMain.addEventListener("click", function() {
+        window.location.href = "main.html";
+    })
+
+    GotoPostBtn.forEach(GotoPost => {
+        GotoPost.addEventListener("click", function() {
+        window.location.href = "mytrip_post.html";
+        });
+    });
+</script>
+</html>
