@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post
 from django.http import HttpResponseRedirect
 from django.utils import timezone
@@ -28,4 +28,4 @@ def write(request):
             created_at = timezone.now()
         )
         b.save()
-    return HttpResponseRedirect('mytrip.html')
+    return redirect('mytrip.html')
