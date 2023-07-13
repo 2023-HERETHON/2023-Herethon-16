@@ -9,13 +9,13 @@
         <div style="margin-top: 50px; margin-bottom: 50px;">
             <div style="display: flex; justify-content: space-between;">
                 <h1>Me</h1>
-                <button class="sub-btn">Logout</button>
+                <button class="sub-btn"><a href="{% url 'logout' %}">Logout</a></button>
             </div>
             <hr>
             <div class="container-me">
                 <img src="{% static 'img/profile.png' %}" class="profile-img">
                 <div style="margin-left: 20px;">
-                    <p style="color: #77A5FF; font-weight: bold; font-size: 25px; margin-bottom: 10px;" >chae-neey</p>
+                    <p style="color: #77A5FF; font-weight: bold; font-size: 25px; margin-bottom: 10px;" >{{ user.username }}</p>
                     <p style="color: #ACACAC; font-weight: bold">여행을 좋아하는 대학생</p>
                     <div>
                         <button class="trip-btn">군산</button>

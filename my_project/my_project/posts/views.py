@@ -4,6 +4,9 @@ from django.http import HttpResponseRedirect
 from django.utils import timezone
 from django.urls import reverse
 
+def mypage(request) :
+    return render(request, 'mypage.html')
+
 def Post_list(request):
     postlist = Post.objects.all()
     return render(request, 'mytrip.html', {'postlist' : postlist})

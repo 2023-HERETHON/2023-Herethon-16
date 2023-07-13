@@ -54,8 +54,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.kakao',
 ]
 
+# 커스텀한 User모델 적용 
+#AUTH_USER_MODEL = 'accounts.User'
 
 SITE_ID = 1
+
 # 카카오 소셜 로그인 
 ACCOUNT_LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 ACCOUNT_LOGOUT_ON_GET = True
@@ -155,3 +158,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
