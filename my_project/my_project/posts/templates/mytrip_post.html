@@ -1,265 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<style>
+  <style>
     /*상단 메뉴부분*/
     body {
-            margin: 0px;
-            background-color: #FFF9F1;
-        }
+      margin: 0px;
+      background-color: #fff9f1;
+    }
 
-        button{
-            border:none;
-            background-color: white;
-        }
+    button {
+      border: none;
+      background-color: white;
+    }
 
-        .head-menu{
-            display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-            padding-right: 30px;
-            padding-left: 30px;
-            padding-bottom: 15px;
-            background-color: white;
-        }
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
 
-        /*서비스 로고*/
-        .title{
-            color:#77A5FF;
-            font-weight: bold;
-            font-size: 23px;
-        }
+    /*서비스 로고*/
+    .title {
+      color: #77a5ff;
+      font-weight: bold;
+      font-size: 23px;
+    }
 
-        /*서비스 기능 버튼*/
-        .menu-btn{
-            justify-content: flex-end;
-        }
+    /*서비스 기능 버튼*/
+    .menu-btn {
+      justify-content: flex-end;
+    }
 
-        .btn {
-            color:#77A5FF;
-            font-weight: bold;
-            font-size: 19px;
-            margin-left: 20px;
-        }
+    .btn {
+      color: #77a5ff;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
 
-        .btn:hover {
-            color: #3a68c3;
+    .btn:hover {
+      color: #3a68c3;
+    }
 
-        }
+    /* mypage 부분 시작 */
 
+    /* Me, My Trip, Like 타이틀 */
+    h1 {
+      color: #1a73e8;
+    }
 
-                /* mypage 부분 시작 */
+    /*h1 옆에 버튼들*/
+    .sub-btn {
+      background-color: transparent;
+      color: #1a73e8;
+      font-weight: bold;
+      font-size: 30px;
+      position: relative;
+      top: 15px;
+      right: 5px;
+    }
 
-        /* Me, My Trip, Like 타이틀 */
-        h1 {
-            color: #1A73E8;
-        }
+    /* 구분선 스타일 */
+    hr {
+      width: 600px;
+      border: none;
+      background-color: #e4e4e4;
+      height: 1px;
+      margin-bottom: 40px;
+    }
 
-        /*h1 옆에 버튼들*/
-        .sub-btn {
-            background-color: transparent;
-            color: #1A73E8;
-            font-weight: bold;
-            font-size: 30px;
-            position: relative;
-            top:15px;
-            right: 5px;
-        }
+    h2 {
+      color: #1a73e8;
+    }
 
-        /* 구분선 스타일 */
-        hr {
-            width: 600px;
-            border: none;
-            background-color: #E4E4E4;
-            height: 1px;
-            margin-bottom: 40px;
-        }
+    /* 전체 콘텐츠 - 가운데 정렬하려고 만든 div */
+    .mypage-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
 
-        h2 {
-            color:#1A73E8;
-        }
+    h3 {
+      color: #77a5ff;
+    }
 
+    /* My Trip + Like 부분*/
+    .trip-btn {
+      border-radius: 20px;
+      background-color: #77a5ff;
+      color: white;
+      font-weight: bold;
+    }
 
-        /* 전체 콘텐츠 - 가운데 정렬하려고 만든 div */
-        .mypage-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-        }
+    .mytrip-content-card {
+      display: flex;
+      flex-direction: column;
+    }
 
-        h3 {
-            color:#77A5FF;
-        }
+    .container-mytrip {
+      width: 600px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 4px 4px 5px rgb(159, 159, 159);
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 30px;
+    }
 
-        /* My Trip + Like 부분*/
-        .trip-btn {
-            border-radius: 20px;
-            background-color:#77A5FF;
-            color: white;
-            font-weight: bold;
-        }
+    .detail-part {
+      padding: 20px;
+    }
 
+    .last-btn {
+      border: none;
+      border-radius: 20px;
+      background-color: #1a73e8;
+      color: white;
+      font-weight: bold;
+      padding: 7px 10px 7px 10px;
+      font-size: 18px;
+    }
 
-        .mytrip-content-card {
-            display: flex;
-            flex-direction: column;
+    .last-btn:hover {
+      background-color: #77a5ff;
+    }
+  </style>
 
-        }
-
-        .container-mytrip {
-            width: 600px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 4px 4px 5px rgb(159, 159, 159);
-            margin-right: 10px;
-            margin-left: 10px;
-            margin-bottom: 30px;
-        }
-
-        .detail-part {
-            padding: 20px;
-        }
-
-        .last-btn {
-            border: none;
-            border-radius: 20px;
-            background-color: #1A73E8;
-            color: white;
-            font-weight: bold;
-            padding: 7px 10px 7px 10px;
-            font-size: 18px;
-        }
-
-        .last-btn:hover {
-            background-color: #77A5FF;
-        }
-
-
-</style>
-
-<body>
+  <body>
     <!--상단 메뉴 부분-->
     <div class="head-menu">
-        <div>
-            <button class="title" id="gotomain">서비스명</button>
-        </div>
-        <div class="menu-btn">
-            <button class="btn">About us</button>
-            <button class="btn">Community</button>
-            <button class="btn">Women-zone</button>
-            <button class="btn" id="gotomypage">My page</button>
-        </div>
+      <div>
+        <button class="title" id="gotomain">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
     </div>
 
+    <div class="mypage-content">
+      <!--My Trip-->
+      <div style="margin-bottom: 50px">
+        <div style="display: flex; justify-content: space-between">
+          <h1>My trip</h1>
+          <button class="sub-btn" id="gotolist">
+            <img src="/CenterPre/mytriplist.png" style="width: 30px" />
+          </button>
+        </div>
+        <hr />
+        <h2>Plan</h2>
+        <div class="mytrip-content-card">
+          <div class="container-mytrip">
+            <form>
+              <div class="detail-part">
+                <h3>여행정보</h3>
+                <p>{{post.title}}</p>
+                <p>{{post.destination}}</p>
+                <p>{{post.startPeriod}} ~ {{post.endPeriod}}</p>
+              </div>
 
+              <hr style="width: 550px; height: 1px; margin-bottom: 0px" />
 
-        <div class="mypage-content">
-            <!--My Trip-->
-            <div style="margin-bottom: 50px;">
-                <div style="display: flex; justify-content: space-between;">
-                    <h1>My trip</h1>
-                    <button class="sub-btn" id="gotolist">
-                        <img src="/CenterPre/mytriplist.png" style="width: 30px;">
-                    </button>
+              <div class="detail-part">
+                <h3>상세일정</h3>
+              </div>
+
+              <hr style="width: 550px; height: 1px; margin-bottom: 0px" />
+
+              <div class="detail-part">
+                <h3>지도</h3>
+                <div id="map" style="width: 100%; height: 500px">
+                  <!--지도 api, javascript 방법 서치중-->
                 </div>
-                <hr>
-                <h2>Plan</h2>
-                <div class="mytrip-content-card">
-                    
-                    <div class="container-mytrip">
-                    <form>
-                            <div class="detail-part">
-                                
-                                <h3>여행정보</h3>
-                    
-                            </div>
-
-                            <hr style="width: 550px; height: 1px; margin-bottom: 0px;">
-
-                            <div class="detail-part">
-                                <h3>상세일정</h3>
-                            
-                                
-                            </div>
-
-                        <hr style="width: 550px; height: 1px; margin-bottom: 0px;">
-
-                        <div class="detail-part">
-                                <h3>지도</h3>
-                                <div id="map" style="width: 100%; height: 500px;">
-                                <!--지도 api, javascript 방법 서치중-->
-                                </div>
-                        </div>
-                    </form> 
-                    </div>
-                </div>
-
-                <h2>Record</h2>
-                <div class="mytrip-content-card">
-                    <div class="container-mytrip">
-                        <form>
-                            <div class="detail-part">
-                                <h3>여행기록</h3>
-                                
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                
-
-            </div>
+              </div>
+            </form>
+          </div>
         </div>
 
-</body>
+        <h2>Record</h2>
+        <div class="mytrip-content-card">
+          <div class="container-mytrip">
+            <form>
+              <div class="detail-part">
+                <h3>여행기록</h3>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 
-<script>
+  <script>
     //페이지 이동
     const GotoMypage = document.getElementById("gotomypage");
     const GotoMain = document.getElementById("gotomain");
     const GotoList = document.getElementById("gotolist");
 
-    GotoMypage.addEventListener("click", function() {
-    window.location.href = "mypage.html";
+    GotoMypage.addEventListener("click", function () {
+      window.location.href = "mypage.html";
     });
 
-    GotoMain.addEventListener("click", function() {
-        window.location.href = "main.html";
+    GotoMain.addEventListener("click", function () {
+      window.location.href = "main.html";
     });
 
-    GotoList.addEventListener("click", function() {
-        window.location.href = "mytrip.html";
+    GotoList.addEventListener("click", function () {
+      window.location.href = "mytrip.html";
     });
-
 
     //게시글 이미지 첨부 시 바로 로드되는 부분
     const InputImg = document.getElementById("input-img");
     const SubmitImg = document.getElementById("submit-img");
 
-    InputImg.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        
-        if (file) {
-            const reader = new FileReader();
+    InputImg.addEventListener("change", function (event) {
+      const file = event.target.files[0];
 
-            reader.onload = function() {
-            SubmitImg.src = reader.result;
-            SubmitImg.style.display = 'block';
-            };
+      if (file) {
+        const reader = new FileReader();
 
-            reader.readAsDataURL(file);
-        } else {
-            SubmitImg.src = '#';
-            SubmitImg.style.display = 'none';
-        }
+        reader.onload = function () {
+          SubmitImg.src = reader.result;
+          SubmitImg.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        SubmitImg.src = "#";
+        SubmitImg.style.display = "none";
+      }
     });
-
-</script>
-
+  </script>
 </html>
