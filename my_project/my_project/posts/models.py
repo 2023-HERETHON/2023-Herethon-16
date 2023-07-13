@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-
+from accounts.models import User
 
 class Post(models.Model):
     title = models.CharField(verbose_name='제목', max_length=20)

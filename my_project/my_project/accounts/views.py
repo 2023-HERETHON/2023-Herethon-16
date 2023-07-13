@@ -29,10 +29,16 @@ def login(request) :
 
 def logout(request) :
     auth.logout(request)
-    return redirect('login.html')
+    return render(request, 'login.html')
 
 def mypage(request) :
     return render(request, 'mypage.html')
+
+def find_id(request) :
+    return render(request, 'login.html')
+
+def find_id(request) :
+    return render(request, 'login.html')
 
 # 필요하면 post views 파일에 가져다 쓰기 
 # def post_create_form(request) :
