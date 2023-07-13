@@ -188,16 +188,16 @@
                     type="text"
                     name="title"
                     id="title"
-                    value="{{posts.title}}"
+                    value="{{form.title.value}}"
                   />
                 </p>
                 <p>
-                  여행지: <input type="text" value="{{posts.destination}}" />
+                  여행지: <input type="text" name="destination" id="destination"value="{{form.destination.value}}" />
                 </p>
                 <p>
                   여행기간:
-                  <input type="date" value="{{posts.startPeriod}}" /> -
-                  <input type="date" value="{{posts.endPeriod}}" />
+                  <input type="date" name="startPeriod" id="startPeriod" value="{{form.startPeriod.value}}" /> -
+                  <input type="date" name="endPeriod" id="endPeriod" value="{{form.endPeriod.value}}" />
                 </p>
                 <p>동행자: <input /></p>
               </div>
@@ -213,9 +213,7 @@
                   style="display: none; max-width: 300px; max-height: 300px"
                 />
                 <p></p>
-                <form>
-                  <textarea rows="20" cols="73">{{ posts.content }}</textarea>
-                </form>
+                  <textarea type="text" name="content" id="content" rows="20" cols="73">{{ form.content.value }}</textarea>
               </div>
 
               <hr style="width: 550px; height: 1px; margin-bottom: 0px" />
@@ -327,37 +325,36 @@
             <!-- 여기까지 지도 필드 -->
             </div>
               </div>
-            </form>
           </div>
         </div>
 
         <h2>Record</h2>
         <div class="mytrip-content-card">
           <div class="container-mytrip">
-            <form>
               <div class="detail-part">
                 <h3>여행기록</h3>
+<<<<<<< HEAD
+                  <textarea type="text" name="record" id="record" rows="20" cols="73">{{form.record.value}}</textarea>
+=======
                 <form>
                   <textarea rows="20" cols="73">{{ posts.record }}</textarea>
                 </form>
+>>>>>>> b09d8f1398326eb4f2df86fed03d90aa56ff9fcb
               </div>
-            </form>
           </div>
         </div>
-
-        <form>
           <p style="font-weight: bold; margin-bottom: 40px">
             게시글을 공개하시겠습니까?
             <input type="radio" name="radio-btn" />공개
             <input type="radio" name="radio-btn" />비공개
           </p>
-        </form>
 
         <div style="display: flex; justify-content: space-between">
           <button class="delete-btn">삭제하기</button>
-          <button class="upload-btn">
-            <input type="submit" value="등록" />등록하기
+          <button type="submit" class="upload-btn">
+            등록하기
           </button>
+        </form>
         </div>
       </div>
     </div>
