@@ -140,7 +140,11 @@
             background-color: #77A5FF;
         }
 
-
+    .map_wrap {position:relative;width:100%;height:350px;}
+    .title {font-weight:bold;display:block;}
+    .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
+    #centerAddr {display:block;margin-top:2px;font-weight: normal;}
+    .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 </style>
 
 <body>
@@ -192,9 +196,19 @@
 
                         <div class="detail-part">
                                 <h3>지도</h3>
-                                <div id="map" style="width: 100%; height: 500px;">
-                                <!--지도 api, javascript 방법 서치중-->
-                                </div>
+                                <div id="map" style="width: 100%; height: 500px;"></div>
+                                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8f39a1f42f22318e72fef9018e0f0838"></script>
+                                <script type="text/javascript">
+	
+                                var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+                                var options = { //지도를 생성할 때 필요한 기본 옵션
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+                                    level: 3 //지도의 레벨(확대, 축소 정도)
+                                };
+    
+                                var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        
+                                </script>
                         </div>
                     </form> 
                     </div>

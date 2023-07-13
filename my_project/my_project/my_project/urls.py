@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.login, name='login'),
     path('accounts/', include('accounts.urls')),
     # posts
-
+    path('posts/', include('posts.urls')),
 
     # 소셜로그인
     path('authaccounts/', include('allauth.urls')),

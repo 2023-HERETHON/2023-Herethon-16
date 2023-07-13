@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서비스명 | {% block title %}{% endblock %}</title>
-    
-    {% include 'style.html' %}
-    
 </head>
 
 <!-- html body 시작 -->
@@ -17,7 +14,7 @@
             <button class="title">서비스명</button>
         </div>
         <div class="menu-btn">
-            <button class="btn">About us</button>
+            <button class="btn" href="{% url 'mypage' %}">About us</button>
             <button class="btn">Community</button>
             <button class="btn">Women-zone</button>
             <button class="btn" id="gotomypage">My page</button>
@@ -43,7 +40,7 @@
 
 
     GotoMypage.addEventListener("click", function() {
-    window.location.href = "mypage.html";
+    window.location.href = "{% url 'mypage'}";
     });
     // my page 관련 
     GotomyTrip.addEventListener("click", function() {
