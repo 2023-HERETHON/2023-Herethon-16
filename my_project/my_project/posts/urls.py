@@ -8,4 +8,5 @@ urlpatterns = [
     path('<int:pk>/', views.Post_detail),
     path('detail/', views.detail, name='detail'),
     path('detail/write', views.write, name='write'),
+    path('mypage/', views.mypage, name='mypage'),
 ]

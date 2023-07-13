@@ -43,7 +43,7 @@
 
 
     GotoMypage.addEventListener("click", function() {
-    window.location.href = "mypage.html";
+    window.location.href = "{% url 'posts:mypage' %}";
     });
     // my page 관련 
     GotomyTrip.addEventListener("click", function() {
