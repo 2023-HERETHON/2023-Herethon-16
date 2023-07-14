@@ -77,10 +77,18 @@
         <button class="title" id="gotomain">FRAVEL</button>
       </div>
       <div class="menu-btn">
-        <button class="btn">About us</button>
-        <button class="btn">Community</button>
-        <button class="btn">Women-zone</button>
-        <button class="btn" id="gotomypage">My page</button>
+        <a href="{% url 'posts:aboutus' %}"
+          ><button class="btn">About us</button></a
+        >
+        <a href="{% url 'posts:community' %}"
+          ><button class="btn">Community</button></a
+        >
+        <a href="{% url 'posts:womenzone' %}"
+          ><button class="btn">Women-zone</button></a
+        >
+        <a href="{% url 'posts:mypage' %}"
+          ><button class="btn">My page</button></a
+        >
       </div>
     </div>
 
