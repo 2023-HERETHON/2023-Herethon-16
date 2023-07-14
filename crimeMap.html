@@ -51,6 +51,52 @@
         display: flex;
         padding-top: 80px;
       }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 60px;
+        margin-left: 60px;
+        margin-top: 30px;
+      }
+
+      .crimeContent {
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      #bar1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ff7777;
+        color: white;
+        font-size: 18px;
+        font-weight: 800;
+        border-radius: 15px;
+        height: 45px;
+        width: 150px;
+      }
+
+      #bar2,
+      #bar3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eeeeee;
+        color: #818181;
+        font-size: 18px;
+        font-weight: 800;
+        border-radius: 15px;
+        height: 45px;
+        width: 150px;
+      }
+
+      #bar2:hover,
+      #bar3:hover {
+        background-color: #ff7777;
+        color: white;
+      }
     </style>
   </head>
 
@@ -67,20 +113,26 @@
       </div>
     </div>
 
-    <div class="main-view">
-      <img
-        style="
-          display: flex;
-          justify-content: flex-start;
-          width: 500px;
-          margin-left: 30px;
-        "
-        src="img/crimeMap.png"
-      />
+    <div class="container">
+      <div class="crimeContent">
+        <p style="margin-right: 20px" id="bar1">전국 범죄지도</p>
+        <p style="margin-right: 20px" id="bar2">지역 범죄순위</p>
+        <p id="bar3">지역 신고센터</p>
+      </div>
     </div>
   </body>
 
   <script>
+    const GotoCrimeList = document.getElementById("bar2");
+    GotoCrimeList.addEventListener("click", function () {
+      window.location.href = "crimeList.html";
+    });
+
+    const GotoCrimeReport = document.getElementById("bar3");
+    GotoCrimeList.addEventListener("click", function () {
+      window.location.href = "crimeReport.html";
+    });
+
     const GotoMypage = document.getElementById("gotomypage");
 
     GotoMypage.addEventListener("click", function () {
