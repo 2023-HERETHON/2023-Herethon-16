@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*상단 메뉴부분*/
+        body {
+            margin: 0px;
+            background-color: #FFF9F1;
+        }
+
+        button{
+            border:none;
+            background-color: white;
+        }
+
+        .head-menu{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-bottom: 15px;
+            background-color: white;
+        }
+
+        /*서비스 로고*/
+        .title{
+            color:#000000;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        /*서비스 기능 버튼*/
+        .menu-btn{
+            justify-content: flex-end;
+        }
+
+        .btn {
+            color: ff7777px;
+            font-weight: bold;
+            font-size: 19px;
+            margin-left: 20px;
+        }
+
+        .btn:hover {
+            color:#FF7777;
+
+        }
+
+</style>
+
+
+    </style>
+</head>
+<body>
+        <!--상단 메뉴 부분-->
+        <div class="head-menu">
+            <div>
+                <button class="title" id="gotomain">서비스명</button>
+            </div>
+            <div class="menu-btn">
+                <button class="btn">About us</button>
+                <button class="btn">Community</button>
+                <button class="btn">Women-zone</button>
+                <button class="btn" id="gotomypage">My page</button>
+            </div>
+        </div>
+
+        <section>
+            <ul class="sectionlist">
+              <span class="section1">Community</span></li>
+            </ul>
+
+            <style>.sectionlist {
+                margin-top: 60px;
+                margin-left: 160px;
+              }
+              
+              .section1 {
+                font-size: 40px;
+                font-weight: bold;
+                color:#FF7777;
+              }
+              </style>
+              
+<div class="button-container">
+  <button type="submit" class="trip-button">여행 기록</button>
+  <button type="submit" class="free-button">자유게시판</button>
+</div>
+
+
+<style>
+    .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: -1px;
+  border-radius: 10px;
+}
+
+.trip-button
+{
+  padding: 9px 18px;
+  background-color: #FF7777;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.free-button {
+  padding: 9px 18px;
+  background-color: #FF7777;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-right: 139px;
+}
+
+.trip-button:hover, .free-button:hover {
+  background-color: #797979;
+}
+
+</style>
+        </section>
+        <style>
+            .line {
+              width: calc(100% - 300px);
+              height: 2px;
+              background-color: #e4e4e4;
+              margin-left: 160px;
+              margin-top: 10px;
+            }
+          </style>
+          
+          <div class="line"></div>
+
+<div class="search-container">
+  <input type="text" placeholder="여행 키워드를 검색해보세요!">
+  <button type="submit">검색</button>
+</div>
+
+<style>
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px;
+    margin-left: 50px;
+    margin-right: 130px;
+    border-radius: 5px;
+  }
+
+  .search-container input[type="text"] {
+    padding: 8px;
+    font-weight: bold;
+    color:#FF7777;
+    border-color: #FF7777;
+    outline: none;
+    border-radius: 4px;
+  }
+
+  .search-container button {
+    padding: 8px 16px;
+    background-color: #FF7777;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .search-container button:hover {
+    background-color: #ffb8b8;
+  }
+</style>
+<style>
+    /* 이전 스타일 코드 생략 */
+  
+    .line-container {
+      width: calc(100% - 300px);
+      margin-left: 160px;
+      margin-top: 10px;
+      border-top: 1px solid #FFF9F1;
+      padding-top: 10px;
+      position: relative; /* 부모 요소에 position: relative; 추가 */
+    }
+  
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      position: relative; /* 그리드 컨테이너에 position: relative; 추가 */
+    }
+  
+    .grid-item {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      aspect-ratio: 1/1.3;
+      position: relative; /* 박스 아이템에 position: relative; 추가 */
+    }
+    .profile-picture {
+            width: 50px; 
+            height: 50px; 
+            border-radius: 100px; 
+        }
+    .kakaomap
+    {
+      width: 319px;
+      height: 200px;
+      border-radius: 10px;
+      margin-right: -1px;
+      background-color: rgb(235, 235, 235);
+      margin-top: -3px;
+      
+    }
+    .location1
+    {
+        margin-top: 20px;
+        width:25px;
+        height:25px;
+    }
+    .location
+    {
+        display: flex;
+        font-size: 18px;
+        margin-top: -28px;
+        font-weight: bold;
+        color:#FF7777;
+        margin-left:30px;
+    }
+   
+    .small-box 
+    {
+      display: flex;
+      width: 338px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      position: absolute; /* 작은 박스에 position: absolute; 추가 */
+      top: 0;
+      left: 0;
+      transform: translate(10px, 20px); /* 중앙 정렬 */
+      z-index: 1; /* 작은 박스를 다른 박스 위에 올리기 위해 z-index를 사용 */
+    }
+    .user-name
+    {
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: auto;
+      margin-left: 10px;
+    }
+    .user-age
+    {
+      font-size: 15px;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+    .user-sex
+    {
+      font-size: 15px;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    .date{
+      font-size:15px;
+      font-weight:bold;
+      margin-top:1px;
+      margin-left:50px;
+    }
+ .travel-schedule {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4c4c4c;
+  margin-left: 6px;
+  margin-top: 13px;
+}
+.blank
+{
+    width:300px;
+    height: 100px;
+    border: 2px solid rgb(246, 147, 147);
+    transform: translate(10px,20px);
+}
+.additional-image
+{
+margin-top: 30px;
+width:60px;
+height:60px;
+border-radius: 5px;
+}
+.ex
+{
+    display: flex;
+    font-size: 20px;
+    margin-left: 70px;
+    margin-top: -59px;
+    font-weight: bold;
+}
+.ex2
+{
+    display: flex;
+    font-size: 15px;
+    margin-left: 73px;
+    margin-top: 9px;
+    font-weight: bold;
+}
+  </style>
+  
+  <div class="line-container">
+    <div class="grid-container">
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+                <span class="user-name">wo0oz_0910</span>
+                <span class="date">여행기간</span><br>
+                <span class="user-age">20대</span>
+                <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">서울</span>
+            <span class="travel-schedule">wo0oz_0910의 여행일정</span>
+            <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          </div>
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+         </div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+             <span class="user-name">nananarizz</span>
+             <span class="date">여행기간</span><br>
+             <span class="user-age">20대</span>
+             <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">서울</span>
+            <span class="travel-schedule">nananarizz의 여행일정</span>
+          </div>
+          <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+         </div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+             <span class="user-name">now_j85</span>
+             <span class="date">여행기간</span><br>
+             <span class="user-age">20대</span>
+             <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">경기도</span>
+            <span class="travel-schedule">now_j85의 여행일정</span>
+          </div>
+          <div class="blank">아직 선택된 장소가 없습니다.</div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+             <span class="user-name">honseongju</span>
+             <span class="date">여행기간</span><br>
+             <span class="user-age">20대</span>
+             <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">부산</span>
+            <span class="travel-schedule">honseongju의 여행일정</span>
+          </div>
+          <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+         </div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+             <span class="user-name">chae_neey</span>
+             <span class="date">여행기간</span><br>
+             <span class="user-age">20대</span>
+             <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">대부도</span>
+            <span class="travel-schedule">chae_neey의 여행일정</span>
+          </div>
+          <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+         </div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+             <span class="user-name">herethon</span>
+             <span class="date">여행기간</span><br>
+             <span class="user-age">20대</span>
+             <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">양양</span>
+            <span class="travel-schedule">herethon의 여행일정</span>
+          </div>
+          <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+         </div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div>
+             <span class="user-name">a12345</span>
+             <span class="date">여행기간</span><br>
+             <span class="user-age">40대</span>
+             <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">인천</span>
+            <span class="travel-schedule">a12345의 여행일정</span>
+          </div>
+          <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+         </div>
+        </div>
+        <div class="grid-item">
+          <div class="kakaomap">
+           <div class="small-box">
+            <image class="profile-picture" src="C:\Users\user\OneDrive\바탕 화면\다운로드.png"></image>
+            <div><span class="user-name">happy_1</span>
+                <span class="date">여행기간</span>
+                <br>
+                <span class="user-age">30대</span>
+                <span class="user-sex">여성</span>
+            </div>
+           </div>
+          </div>
+          <image class="location1" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-14 234310.png"></image>
+          <div>
+            <span class="location">제주도</span>
+            <span class="travel-schedule">happy_1의 여행일정</span>
+          </div>
+          <img class="additional-image" src="C:\Users\user\OneDrive\바탕 화면\화면 캡처 2023-07-15 002248.png"  alt="Additional Image">
+          
+          <div>
+            <span class="ex">서울랜드</span>
+            <span class="ex2">관광명소</span>
+        </div>   
+    </div>
+  </div>
+<style>
+  .page-container
+   {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-number 
+{
+    margin: 0 5px;
+    font-size: 20px;
+    color: #030303;
+    cursor: pointer;
+}
+
+.current-page 
+{
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<!-- Previous code here -->
+
+<div class="page-container">
+<span class="page-number current-page">1</span>
+<span class="page-number">2</span>
+<span class="page-number">3</span>
+<!-- Add more page numbers as needed -->
+</div>
+</body>
+</html>
