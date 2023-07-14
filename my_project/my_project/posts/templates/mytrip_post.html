@@ -151,6 +151,7 @@
     </div>
 
     <div class="mypage-content">
+      {% if post.is_public or user.is_authenticated %}
       <!--My Trip-->
       <div style="margin-bottom: 50px">
         <div style="display: flex; justify-content: space-between">
@@ -201,6 +202,9 @@
         </div>
       </div>
     </div>
+    {% else %}
+    <p>이 게시물은 비공개입니다.</p>
+    {% endif %}
   </body>
 
   <script>

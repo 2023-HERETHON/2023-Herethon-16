@@ -11,6 +11,12 @@ class Post(models.Model):
     created_at = models.DateTimeField(verbose_name='작성일', auto_now_add=True)
     content = models.TextField(verbose_name='상세일정')
     record = models.TextField(verbose_name='여행기록')
+    public_choice = (
+        (True, '공개'),
+        (False, '비공개'),
+    )
+    is_public = models.BooleanField(choices=public_choice, default=True)
+
 
     like_count = models.IntegerField(verbose_name='좋아요개수', null=True, blank=True)
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='likes', null=True, blank=True)
