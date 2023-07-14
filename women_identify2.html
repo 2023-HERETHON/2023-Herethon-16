@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    /*상단 메뉴부분*/
+    body {
+      margin: 0px;
+      background-color: #fff9f1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
+
+    .title {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .menu-btn {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
+
+    .btn:hover {
+      color: #eb4a4a;
+    }
+
+    /* identify 시작 */
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 400px;
+      margin-left: 400px;
+      margin-top: 30px;
+    }
+
+    .method-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 40px;
+      height: 250px;
+      background-color: white;
+      border: solid;
+      border-color: #b4b2b2d8;
+      border-radius: 1px;
+    }
+    .method {
+      display: flex;
+      flex-direction: column;
+      width: 224px;
+    }
+  </style>
+
+  <body>
+    <!--상단 메뉴 부분-->
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 style="height: 30px">여성 인증</h1>
+      <hr style="width: 900px; height: 2px; margin-bottom: 10px" />
+      <img style="margin-bottom: 15px" src="img/step2.png" />
+      <!--여성인증 설명내용 담기-->
+      <textarea rows="12" cols="50"></textarea>
+
+      <div class="method-box">
+        <div class="method">
+          <img id="methodBtn1" src="img/methodBtn1.png" />
+        </div>
+        <div
+          style="width: 2px; height: 180px; background-color: #b4b2b2d8"
+          class="vertical-line"
+        ></div>
+        <div class="method">
+          <img id="methodBtn2" src="img/methodBtn2.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    //인증하기 창 띄우기
+    const byPhone = document.getElementById("methodBtn1");
+    const byIpin = document.getElementById("methodBtn2");
+    byPhone.addEventListener("click", function () {
+      //인증창 띄우기 연결
+    });
+    byIpin.addEventListener("click", function () {
+      //인증창 띄우기 연결
+    });
+  </script>
+</html>

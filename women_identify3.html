@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    /*상단 메뉴부분*/
+    body {
+      margin: 0px;
+      background-color: #fff9f1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
+
+    .title {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .menu-btn {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
+
+    .btn:hover {
+      color: #eb4a4a;
+    }
+
+    /* identify 시작 */
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 400px;
+      margin-left: 400px;
+      margin-top: 30px;
+    }
+
+    .account-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    #account-content {
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @keyframes blink-animation {
+  50% {
+    opacity: 0; /* 커서가 보이지 않도록 설정 */
+  }
+}
+
+.blink-cursor {
+  animation: blink-animation 1s step-start infinite;
+}
+  </style>
+
+  <body>
+    <!--상단 메뉴 부분-->
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 style="height: 30px">여성 인증</h1>
+      <hr style="width: 900px; height: 2px; margin-bottom: 10px" />
+      <img style="margin-bottom: 15px" src="img/step3.png" />
+
+      <div class="account-title">
+        <img style="height: 18px; margin-right: 8px" src="img/pencilBtn.png" />
+        <p id="account-content">계정 정보 입력</p>
+      </div>
+
+      <div class="profile">
+        <img
+          style="width: 40px; margin-right: 20px"
+          src="img/profileCircle.png"
+        />
+        <input
+          type="text"
+          style="font-size: 20px; font-weight: bold"
+          placeholder="닉네임을 입력하세요"
+        />
+      </div>
+      <h3>이름 :</h2>
+        <input
+        type="text"
+        style="font-size: 20px; font-weight: bold"
+        placeholder="닉네임을 입력하세요"
+      />
+      <h3>생년월일 :</h2>
+        <input
+        type="text"
+        style="font-size: 20px; font-weight: bold"
+        placeholder="닉네임을 입력하세요"
+      />
+      <h3>이메일 :</h2>
+        <input
+        type="text"
+        style="font-size: 20px; font-weight: bold"
+        placeholder="닉네임을 입력하세요"
+      />
+    </div>
+  </body>
+
+  <script>
+    //페이지 이동
+    const GotoMypage = document.getElementById("gotomypage");
+    const GotoMain = document.getElementById("gotomain");
+    const GotoList = document.getElementById("gotolist");
+
+    GotoMypage.addEventListener("click", function () {
+      window.location.href = "mypage.html";
+    });
+
+    GotoMain.addEventListener("click", function () {
+      window.location.href = "main.html";
+    });
+
+    GotoList.addEventListener("click", function () {
+      window.location.href = "mytrip.html";
+    });
+  </script>
+</html>
