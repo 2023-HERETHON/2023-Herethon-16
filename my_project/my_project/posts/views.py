@@ -1,19 +1,23 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post
 from .forms import PostForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseForbidden
 from django.utils import timezone
-from django.urls import reverse
 
 def mypage(request) :
     return render(request, 'mypage.html')
 
 def Post_list(request):
     postlist = Post.objects.all()
+
     return render(request, 'mytrip.html', {'postlist' : postlist})
 
-def Post_detail(request, pk):
-    post = Post.objects.get(pk=pk)
+def Post_detail(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    post = get_object_or_404(Post, pk=post_id)
+    
+    if not post.is_public and not request.user.is_authenticated:
+        return HttpResponseForbidden()
     return render(request, 'mytrip_post.html', {'post': post})
 
 def detail(request):
@@ -24,17 +28,12 @@ def write(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-        # Post.title = request.POST['title'],
-        # destination = request.POST['destination'],
-        # startPeriod = request.POST['startPeriod'],
-        # endPeriod = request.POST['endPeriod'],
-        # content = request.POST['content'],
-        # record = request.POST['record'],
             post.created_at = timezone.now()
-        #posts = Post(title=title, destination=destination, startPeriod=startPeriod, endPeriod=endPeriod, content=content, record=record, created_at=created_at)
+            if 'is_public' not in request.POST:
+                post.is_public = False
             post.save()
             return redirect('posts:postlist')
     else:
-        form = PostForm()
+        form = PostForm(initial={'is_public': True})
     context = {'form':form}
     return render(request, 'mytrip_detail.html', context)

@@ -333,20 +333,14 @@
           <div class="container-mytrip">
               <div class="detail-part">
                 <h3>여행기록</h3>
-<<<<<<< HEAD
                   <textarea type="text" name="record" id="record" rows="20" cols="73">{{form.record.value}}</textarea>
-=======
-                <form>
-                  <textarea rows="20" cols="73">{{ posts.record }}</textarea>
-                </form>
->>>>>>> b09d8f1398326eb4f2df86fed03d90aa56ff9fcb
               </div>
           </div>
         </div>
           <p style="font-weight: bold; margin-bottom: 40px">
             게시글을 공개하시겠습니까?
-            <input type="radio" name="radio-btn" />공개
-            <input type="radio" name="radio-btn" />비공개
+            <input type="radio" name="is_public" id="public-btn" value="Y" />공개
+            <input type="radio" name="is_public" id="private-btn" value="N" />비공개
           </p>
 
         <div style="display: flex; justify-content: space-between">

@@ -1,9 +1,68 @@
 from django.db import models
-from django.contrib.auth import get_user_model
-from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import User
+from django.contrib.auth.models import PermissionsMixin
+# 여기서 부터 
+class UserManager(BaseUserManager):
+    def create_user(self, username, email, name, phone_number, password=None):
+        if not username:
+            raise ValueError('must have user name')
+        if not email:
+            raise ValueError('must have user email')
+        user = self.model(
+            username=username,
+            email=self.normalize_email(email),
+            name=name,
+            phone_number=phone_number
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
 
-User = get_user_model()
+    def create_superuser(self, username, email, name, phone_number, password):
+        user = self.create_user(
+            username=username,
+            email=self.normalize_email(email),
+            name=name,
+            phone_number=phone_number,
+            password=password
+        )
+        user.is_admin = True
+        user.is_staff = True
+        user.save(using=self._db)
+        return user
+
+class User(AbstractBaseUser, PermissionsMixin):
+    # 필요한 것 .. 
+    # 프로필사진, 한줄소개, 회원가입시 회원이름 저장(오케이)
+    username = models.CharField(max_length=100, unique=True)
+    email = models.EmailField(max_length=255,unique=True)
+    name = models.CharField(max_length=10, unique=True)
+    phone_number = models.CharField(max_length=20)
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False, null=True)
+    objects = UserManager()
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email','name','phone_number']
+    
+
+    def __str__(self):
+        return self.username
+        
+def has_perm(self, perm, obj=None):
+    return True
+
+def has_module_perms(self, app_label):
+    return True
+
+@property
+def is_staff(self):
+    return self.is_admin
+# 여기까지 custom User 모델 구현 (안되면 삭제하기 )
+
+
 # class UserManager(BaseUserManager):
 #     def _create_user(self, email, username, password, name, **extra_fields):
 
@@ -43,36 +102,8 @@ User = get_user_model()
 #     def __str__(self):
 #         return "<%d %s>" % (self.pk, self.username)
 
-# class auth(object):
-#     # 이 클래스를 정의하여 settings 에 auth backend로 등록하면 authenticate함수를 아래 처럼 커스터마이징 하여 사용할 수 있다.
-#     def authenticate(self, **kwargs):
-#         from django.contrib.auth import get_user_model
-#         email_id = kwargs.get('email_id')
-#         password = kwargs.get('password')
-#         try:
-#             user = get_user_model().objects.get(email_id=email_id)
-#         except:
-#             # 유저가 존재하지 않음
-#             return None
-#         if user.status == 'LOCKED':
-#             # 유저 상태가 잠금인 경우
-#             raise Exception('USER IS LOCKED')
-            
-#         if user.login_fail_count >= 5:
-#             # 로그인 실패 횟수가 5회 이상이면 로그인 불가
-#             raise Exception('PASSWORD FAILED BY 5 TIMES')
-        
-#         if str(user.password) == hashlib.sha256(password).hexdigest():
-#             # 패스워드 일치 => 로그인 성공
-#             user.login_fail_count = 0 # 패스워드 실패 횟수를 0으로 초기화
-#             user.save(update_fields=['login_fail_count'])
-#             return user
-#         else:
-#             # 패스워드 불일치 => 로그인 실패
-#             user.login_fail_count += 1
-#             user.save(update_fields=['login_fail_count'])
-#             return None
-        
+
+
 # class Post(models.Model) :
 #     title = models.CharField(verbose_name='제목', max_length=50)
 #     # 여행지 필드..
