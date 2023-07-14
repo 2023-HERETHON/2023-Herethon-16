@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About US</title>
+  </head>
+  <style>
+    body {
+      margin: 0px;
+      background-color: #f1f1f1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
+
+    .title {
+      color: #77a5ff;
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .menu-btn {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      color: #77a5ff;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
+
+    .btn:hover {
+      color: #3a68c3;
+    }
+  </style>
+  <body>
+    <div class="head-menu">
+      <div>
+        <button class="title">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <a href="{% url 'posts:aboutus' %}"
+          ><button class="btn">About us</button></a
+        >
+        <a href="{% url 'posts:community' %}"
+          ><button class="btn">Community</button></a
+        >
+        <a href="{% url 'posts:womenzone' %}"
+          ><button class="btn">Women-zone</button></a
+        >
+        <a href="{% url 'posts:mypage' %}"
+          ><button class="btn">My page</button></a
+        >
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin: 150px">
+      <img src="img/aboutfravel.png" style="width: 1000px" />
+    </div>
+
+    <hr style="width: 600px" />
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      "
+    >
+      <img src="img/about1.png" style="width: 270px; padding: 50px" />
+      <img src="img/about2.png" style="width: 270px; padding: 50px" />
+      <img src="img/about3.png" style="width: 270px; padding: 50px" />
+    </div>
+
+    <hr style="width: 600px" />
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+        margin-bottom: 200px;
+      "
+    >
+      <img src="/img/about4.png" style="width: 700px" />
+    </div>
+
+    <footer style="background-color: #b9b9b9; padding: 50px">
+      <div style="display: flex; justify-content: space-between">
+        <p style="color: #8b8b8b; font-weight: bold">FRAVEL</p>
+        <p style="color: #8b8b8b; font-weight: bold">여기톤 16팀 Wo-rip!</p>
+      </div>
+
+      <div
+        style="
+          width: 1440px;
+          height: 1px;
+          background-color: #8b8b8b;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        "
+      ></div>
+
+      <div style="display: flex; justify-content: space-between">
+        <div>
+          <a style="color: #8b8b8b; font-weight: bold; margin-right: 60px"
+            >My Trip</a
+          >
+          <a style="color: #8b8b8b; font-weight: bold; margin-right: 60px"
+            >Community</a
+          >
+          <a style="color: #8b8b8b; font-weight: bold; margin-right: 60px"
+            >Women-zone</a
+          >
+        </div>
+        <div>
+          <a style="color: #8b8b8b; font-weight: bold">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script></script>
+</html>

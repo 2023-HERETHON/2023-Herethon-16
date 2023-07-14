@@ -1,21 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500&family=Titan+One&display=swap');
+     </style>
     <title>Document</title>
   </head>
 
   <style>
+   
     /*상단 메뉴부분*/
     body {
       margin: 0px;
       background-color: #fff9f1;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     button {
       border: none;
       background-color: white;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .head-menu {
@@ -26,6 +33,7 @@
       padding-left: 30px;
       padding-bottom: 15px;
       background-color: white;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /*서비스 로고*/
@@ -33,11 +41,13 @@
       color: #77a5ff;
       font-weight: bold;
       font-size: 23px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /*서비스 기능 버튼*/
     .menu-btn {
       justify-content: flex-end;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .btn {
@@ -45,10 +55,12 @@
       font-weight: bold;
       font-size: 19px;
       margin-left: 20px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .btn:hover {
       color: #3a68c3;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /* mypage 부분 시작 */
@@ -56,6 +68,7 @@
     /* Me, My Trip, Like 타이틀 */
     h1 {
       color: #1a73e8;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /*h1 옆에 버튼들*/
@@ -67,6 +80,7 @@
       position: relative;
       top: 15px;
       right: 5px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /* 구분선 스타일 */
@@ -76,10 +90,12 @@
       background-color: #e4e4e4;
       height: 1px;
       margin-bottom: 40px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     h2 {
       color: #1a73e8;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /* 전체 콘텐츠 - 가운데 정렬하려고 만든 div */
@@ -88,10 +104,12 @@
       flex-direction: column;
       align-items: center;
       margin-top: 30px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     h3 {
       color: #77a5ff;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     /* My Trip + Like 부분*/
@@ -100,11 +118,13 @@
       background-color: #77a5ff;
       color: white;
       font-weight: bold;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .mytrip-content-card {
       display: flex;
       flex-direction: column;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .container-mytrip {
@@ -114,11 +134,13 @@
       box-shadow: 4px 4px 5px rgb(159, 159, 159);
       margin-right: 10px;
       margin-left: 10px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
       margin-bottom: 30px;
     }
 
     .detail-part {
       padding: 20px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .last-btn {
@@ -129,10 +151,13 @@
       font-weight: bold;
       padding: 7px 10px 7px 10px;
       font-size: 18px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
     }
 
     .last-btn:hover {
       background-color: #77a5ff;
+     font-family: 'IBM Plex Sans KR', sans-serif;
+    
     }
   </style>
 
@@ -143,21 +168,28 @@
         <button class="title" id="gotomain">서비스명</button>
       </div>
       <div class="menu-btn">
-        <button class="btn">About us</button>
-        <button class="btn">Community</button>
-        <button class="btn">Women-zone</button>
-        <button class="btn" id="gotomypage">My page</button>
+        <a href="{% url 'posts:aboutus' %}"
+          ><button class="btn">About us</button></a
+        >
+        <a href="{% url 'posts:community' %}"
+          ><button class="btn">Community</button></a
+        >
+        <a href="{% url 'posts:womenzone' %}"
+          ><button class="btn">Women-zone</button></a
+        >
+        <a href="{% url 'posts:mypage' %}"
+          ><button class="btn">My page</button></a
+        >
       </div>
     </div>
 
     <div class="mypage-content">
-      {% if post.is_public or user.is_authenticated %}
       <!--My Trip-->
       <div style="margin-bottom: 50px">
         <div style="display: flex; justify-content: space-between">
           <h1>My trip</h1>
           <button class="sub-btn" id="gotolist">
-            <img src="/CenterPre/mytriplist.png" style="width: 30px" />
+            <a href="{% url 'posts:postlist' %}"><img src="{% static 'img/mytriplist.png' %}" style="width: 30px" /></a>
           </button>
         </div>
         <hr />
@@ -165,17 +197,19 @@
         <div class="mytrip-content-card">
           <div class="container-mytrip">
             <form>
+              {% if post.is_public or request.user.is_authenticated %}
               <div class="detail-part">
                 <h3>여행정보</h3>
-                <p>{{post.title}}</p>
-                <p>{{post.destination}}</p>
-                <p>{{post.startPeriod}} ~ {{post.endPeriod}}</p>
+                <p>제목: {{post.title}}</p>
+                <p>목적지: {{post.destination}}</p>
+                <p>여행 기간: {{post.startPeriod}} ~ {{post.endPeriod}}</p>
               </div>
 
               <hr style="width: 550px; height: 1px; margin-bottom: 0px" />
 
               <div class="detail-part">
                 <h3>상세일정</h3>
+                <p>{{post.content}}</p>
               </div>
 
               <hr style="width: 550px; height: 1px; margin-bottom: 0px" />
@@ -183,47 +217,81 @@
               <div class="detail-part">
                 <h3>지도</h3>
                 <div id="map" style="width: 100%; height: 500px">
+                  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8f39a1f42f22318e72fef9018e0f0838&libraries=services"></script>
+                  <script>
+                    var mapContainer = document.getElementById('map'); // 지도를 표시할 div 요소
+                  
+                    var latitude = {{ post.latitude }}; // 경도 값
+                    var longitude = {{ post.longitude }};
+                    var mapOption = {
+                      center: new kakao.maps.LatLng(latitude, longitude), // 지도 중심 좌표 설정
+                      level: 1 // 지도 확대 레벨 설정
+                    };
+                  
+                    // 지도를 생성합니다
+                    var map = new kakao.maps.Map(mapContainer, mapOption);
+                  
+                    // 마커를 생성하고 위치를 설정합니다
+                    var markerPosition = new kakao.maps.LatLng(latitude, longitude);
+                    var marker = new kakao.maps.Marker({
+                      position: markerPosition
+                    });
+                  
+                    // 마커를 지도에 표시합니다
+                    marker.setMap(map);
+                  
+                    // 주소-좌표 변환 객체를 생성합니다
+                    var geocoder = new kakao.maps.services.Geocoder();
+                  
+                    // 좌표로 주소를 검색합니다
+                    geocoder.coord2Address(markerPosition, function(result, status) {
+                      if (status === kakao.maps.services.Status.OK) {
+                        var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+                        detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+                  
+                        var content = '<div class="bAddr">' +
+                          '<span class="title">우리여행지 정보</span>' +
+                          detailAddr +
+                          '</div>';
+                  
+                        // 인포윈도우를 생성하고 마커 위에 표시합니다
+                        var infowindow = new kakao.maps.InfoWindow({
+                          content: content,
+                          zIndex: 1,
+                          position: markerPosition
+                        });
+                  
+                        // 인포윈도우를 지도에 표시합니다
+                        infowindow.open(map, marker);
+                      }
+                    });
+                  </script>
+                  
                   <!--지도 api, javascript 방법 서치중-->
                 </div>
               </div>
-            </form>
           </div>
         </div>
 
         <h2>Record</h2>
         <div class="mytrip-content-card">
           <div class="container-mytrip">
-            <form>
               <div class="detail-part">
                 <h3>여행기록</h3>
+                <p>{{post.record}}</p>
               </div>
+              {% else %}
+              <p>이 게시물은 비공개입니다.</p>
+              {% endif %}
             </form>
           </div>
         </div>
       </div>
     </div>
-    {% else %}
-    <p>이 게시물은 비공개입니다.</p>
-    {% endif %}
   </body>
 
   <script>
-    //페이지 이동
-    const GotoMypage = document.getElementById("gotomypage");
-    const GotoMain = document.getElementById("gotomain");
-    const GotoList = document.getElementById("gotolist");
 
-    GotoMypage.addEventListener("click", function () {
-      window.location.href = "mypage.html";
-    });
-
-    GotoMain.addEventListener("click", function () {
-      window.location.href = "main.html";
-    });
-
-    GotoList.addEventListener("click", function () {
-      window.location.href = "mytrip.html";
-    });
 
     //게시글 이미지 첨부 시 바로 로드되는 부분
     const InputImg = document.getElementById("input-img");

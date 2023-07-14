@@ -1,15 +1,31 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>서비스명 | {% block title %}{% endblock %}</title>
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+        background-color: #f1f1f1;
+      }
 
-    {% include 'style.html' %}
+      button {
+        border: none;
+        background-color: white;
+      }
+
+      .head-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 15px;
+        background-color: white;
+      }
+    </style>
   </head>
-
-  <!-- html body 시작 -->
   <body>
     <div class="head-menu">
       <div>
@@ -30,9 +46,5 @@
         >
       </div>
     </div>
-
-    {% block content %}
-    <!-- 페이지별 상세 -->
-    {% endblock %}
   </body>
 </html>

@@ -1,15 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>서비스명 | {% block title %}{% endblock %}</title>
-
-    {% include 'style.html' %}
+    <title>Document</title>
   </head>
-
-  <!-- html body 시작 -->
   <body>
     <div class="head-menu">
       <div>
@@ -30,9 +25,5 @@
         >
       </div>
     </div>
-
-    {% block content %}
-    <!-- 페이지별 상세 -->
-    {% endblock %}
   </body>
 </html>

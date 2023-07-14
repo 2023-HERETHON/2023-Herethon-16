@@ -3,7 +3,8 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .forms import UserCreationForm,UserChangeForm
-from .models import User
+from .models import *
+from posts.models import *
 
 #from .models import User
 
@@ -32,6 +33,9 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ('email',)
     ordering = ('email',)
     filter_horizontal = ()
+
+    def has_change_permission(self, request, obj=None):
+        return True
 #admin.site.register(User)
 admin.site.register(User, UserAdmin)
 admin.site.unregister(Group)

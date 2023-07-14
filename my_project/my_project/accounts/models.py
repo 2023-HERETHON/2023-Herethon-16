@@ -28,7 +28,9 @@ class UserManager(BaseUserManager):
             password=password
         )
         user.is_admin = True
+        user.is_superuser = True # 블로그에 적어두기
         user.is_staff = True
+        user.is_active = True
         user.save(using=self._db)
         return user
 

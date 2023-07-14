@@ -1,211 +1,217 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-        /*상단 메뉴부분*/
-        body {
-            margin: 0px;
-            background-color: #FFF9F1;
-        }
+      /*상단 메뉴부분*/
+      body {
+        margin: 0px;
+        background-color: #fff9f1;
+      }
 
-        button{
-            border:none;
-            background-color: white;
-        }
+      button {
+        border: none;
+        background-color: white;
+      }
 
-        .head-menu{
-            display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-            padding-right: 30px;
-            padding-left: 30px;
-            padding-bottom: 15px;
-            background-color: white;
-        }
+      .head-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 15px;
+        background-color: white;
+      }
 
-        /*서비스 로고*/
-        .title{
-            color:#77A5FF;
-            font-weight: bold;
-            font-size: 23px;
-        }
+      /*서비스 로고*/
+      .title {
+        color: #77a5ff;
+        font-weight: bold;
+        font-size: 23px;
+      }
 
-        /*서비스 기능 버튼*/
-        .menu-btn{
-            justify-content: flex-end;
-        }
+      /*서비스 기능 버튼*/
+      .menu-btn {
+        justify-content: flex-end;
+      }
 
-        .btn {
-            color:#77A5FF;
-            font-weight: bold;
-            font-size: 19px;
-            margin-left: 20px;
-        }
+      .btn {
+        color: #77a5ff;
+        font-weight: bold;
+        font-size: 19px;
+        margin-left: 20px;
+      }
 
-        .btn:hover {
-            color: #3a68c3;
+      .btn:hover {
+        color: #3a68c3;
+      }
 
-        }
+      /* mypage 부분 시작 */
 
+      /* Me, My Trip, Like 타이틀 */
+      h1 {
+        color: #1a73e8;
+      }
 
-                /* mypage 부분 시작 */
+      /*h1 옆에 버튼들*/
+      .sub-btn {
+        background-color: transparent;
+        color: #1a73e8;
+        font-weight: bold;
+        font-size: 30px;
+        position: relative;
+        top: 10px;
+        right: 10px;
+      }
 
-        /* Me, My Trip, Like 타이틀 */
-        h1 {
-            color: #1A73E8;
-        }
+      /* 구분선 스타일 */
+      hr {
+        width: 600px;
+        border: none;
+        background-color: #e4e4e4;
+        height: 1px;
+        margin-bottom: 40px;
+      }
 
-        /*h1 옆에 버튼들*/
-        .sub-btn {
-            background-color: transparent;
-            color: #1A73E8;
-            font-weight: bold;
-            font-size: 30px;
-            position: relative;
-            top:10px;
-            right: 10px;
-        }
+      /* 전체 콘텐츠 - 가운데 정렬하려고 만든 div */
+      .mypage-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
 
-        /* 구분선 스타일 */
-        hr {
-            width: 600px;
-            border: none;
-            background-color: #E4E4E4;
-            height: 1px;
-            margin-bottom: 40px;
-        }
+      /* My Trip + Like 부분*/
+      .trip-btn {
+        border-radius: 20px;
+        background-color: #77a5ff;
+        color: white;
+        font-weight: bold;
+      }
 
+      .mytrip-content-card {
+        display: flex;
+        flex-direction: row;
+      }
 
-        /* 전체 콘텐츠 - 가운데 정렬하려고 만든 div */
-        .mypage-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-        }
+      .container-mytrip {
+        width: 290px;
+        height: 140px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px rgb(159, 159, 159);
+        margin-right: 10px;
+        margin-left: 10px;
+        display: flex;
+      }
 
-        /* My Trip + Like 부분*/
-        .trip-btn {
-            border-radius: 20px;
-            background-color:#77A5FF;
-            color: white;
-            font-weight: bold;
-        }
+      .trip-img {
+        border-radius: 10%;
+        width: 110px;
+        height: 110px;
+        padding: 15px;
+      }
 
-
-        .mytrip-content-card {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .container-mytrip {
-            width: 290px;
-            height: 140px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 4px 4px 5px rgb(159, 159, 159);
-            margin-right: 10px;
-            margin-left: 10px;
-            display: flex;
-        }
-
-        .trip-img {
-            border-radius: 10%;
-            width: 110px;
-            height: 110px;
-            padding: 15px;
-        }
-
-        .post-btn {
-            background-color: transparent;
-        }
-
-
+      .post-btn {
+        background-color: transparent;
+      }
     </style>
-</head>
-<body>
-        <!--상단 메뉴 부분-->
-        <div class="head-menu">
-            <div>
-                <button class="title" id="gotomain">서비스명</button>
-            </div>
-            <div class="menu-btn">
-                <button class="btn">About us</button>
-                <button class="btn">Community</button>
-                <button class="btn">Women-zone</button>
-                <button class="btn" id="gotomypage">My page</button>
-            </div>
-        </div>
-
-
-        <div class="mypage-content">
-        <!--My Trip-->
-        <div style="margin-bottom: 50px;">
-            <div style="display: flex; justify-content: space-between;">
-                <h1>My trip</h1>
-                <button class="sub-btn" id="gotodetail">+</button>
-            </div>
-            <hr>
-            <div class="mytrip-content-card">
-                <button class="post-btn">
-                <div class="container-mytrip">
-                    <div>
-                        <img src="img/trip1.png" class="trip-img">
-                    </div>
-                    <div>
-                        <p style="color: #77A5FF; font-weight: bold; font-size: 17px; ">7월의 경주여행</p>
-                        <p style="color: #ACACAC; font-weight: bold; font-size: 14px;">23.07.16 - 23.07.18</p>
-                    </div>
-                </div>
-                </button>
-
-                <button class="post-btn">
-                <div class="container-mytrip">
-                    <div>
-                        <img src="img/trip2.png" class="trip-img"> 
-                    </div>
-                    <div>
-                        <p style="color: #77A5FF; font-weight: bold; font-size: 17px; padding-right: 10px;">여~수밤바다!</p>
-                        <p style="color: #ACACAC; font-weight: bold; font-size: 14px; padding-right: 10px;">23.02.25 - 23.02.26</p>
-                    </div>
-                </div>
-                </button>
-
-            </div>
-        </div>
+  </head>
+  <body>
+    <!--상단 메뉴 부분-->
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <a href="{% url 'posts:aboutus' %}"
+          ><button class="btn">About us</button></a
+        >
+        <a href="{% url 'posts:community' %}"
+          ><button class="btn">Community</button></a
+        >
+        <a href="{% url 'posts:womenzone' %}"
+          ><button class="btn">Women-zone</button></a
+        >
+        <a href="{% url 'posts:mypage' %}"
+          ><button class="btn">My page</button></a
+        >
+      </div>
     </div>
 
+    <div class="mypage-content">
+      <!--My Trip-->
+      <div style="margin-bottom: 50px">
+        <div style="display: flex; justify-content: space-between">
+          <h1>My trip</h1>
+          <a href="{% url 'posts:write' %}"><button class="sub-btn" id="gotodetail">+</button></a>
+        </div>
+        <hr />
+        {% for p in postlist %}
+        <div class="mytrip-content-card">
+            <div class="container-mytrip">
+              <div>
+                <img src="{{p.head_image.url}}" class="trip-img" />
+              </div>
+              <div>
+                <p style="color: #77a5ff; font-weight: bold; font-size: 17px"><a href="{{ p.get_absolute_url}}" style="text-decoration: None; color:#77a5ff;">
+                  {{ p.title }}</a>
+                </p>
+                <p style="color: #acacac; font-weight: bold; font-size: 14px">
+                  {{ p.startPeriod }} - {{ p.endPeriod }}
+                </p>
+              </div>
+            </div>
+          </a>
 
-</body>
+          {% comment %}
+          <button class="post-btn">
+            <div class="container-mytrip">
+              <div>
+                <img src="img/trip2.png" class="trip-img" />
+              </div>
+              <div>
+                <p
+                  style="
+                    color: #77a5ff;
+                    font-weight: bold;
+                    font-size: 17px;
+                    padding-right: 10px;
+                  "
+                >
+                  여~수밤바다!
+                </p>
+                <p
+                  style="
+                    color: #acacac;
+                    font-weight: bold;
+                    font-size: 14px;
+                    padding-right: 10px;
+                  "
+                >
+                  23.02.25 - 23.02.26
+                </p>
+              </div>
+            </div>
+          </button>
+          {% endcomment %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
 
-<script>
-    const GotoMypage = document.getElementById("gotomypage");
-    const GotoMain = document.getElementById("gotomain");
-    const GotoDetail = document.getElementById("gotodetail");
-    const GotoPostBtn = document.querySelectorAll(".post-btn");
+  <script>
 
-    GotoMypage.addEventListener("click", function() {
-    window.location.href = "mypage.html";
-    });
-
-    GotoMain.addEventListener("click", function() {
-        window.location.href = "main.html";
-    });
-
-    GotoDetail.addEventListener("click", function() {
-        window.location.href = "mytrip_detail.html";
-    });
-
-    GotoPostBtn.forEach(GotoPost => {
-        GotoPost.addEventListener("click", function() {
-        window.location.href = "mytrip_post.html";
-        });
-    });
-
-
-</script>
+    {% comment %} GotoPostBtn.forEach((GotoPost) => {
+      GotoPost.addEventListener("click", function () {
+        window.location.href = "{{mytrip_post.html}}";
+      });
+    }); {% endcomment %}
+  </script>
 </html>
