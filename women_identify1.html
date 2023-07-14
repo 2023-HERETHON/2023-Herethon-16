@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    /*상단 메뉴부분*/
+    body {
+      margin: 0px;
+      background-color: #fff9f1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
+
+    .title {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .menu-btn {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
+
+    .btn:hover {
+      color: #eb4a4a;
+    }
+
+    /* identify 시작 */
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 400px;
+      margin-left: 400px;
+      margin-top: 30px;
+    }
+
+    #identify-title {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .agreement {
+      display: flex;
+      flex-direction: column;
+    }
+    .agreement-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .agreement-check {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 20px;
+    }
+    #agree-content {
+      font-weight: bold;
+    }
+
+    .checkbox-container {
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .checkbox-custom {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #000;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+
+    .agreebtn {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  </style>
+
+  <body>
+    <!--상단 메뉴 부분-->
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 style="height: 30px">여성 인증</h1>
+
+      <hr style="width: 900px; height: 2px; margin-bottom: 10px" />
+      <img style="margin-bottom: 10px" src="img/step1.png" />
+      <div class="agreement">
+        <div class="agreement-title">
+          <img style="height: 12px; margin-right: 8px" src="img/Vector.png" />
+          <p id="agree-content">이용약관</p>
+        </div>
+        <textarea rows="4" cols="50"></textarea>
+      </div>
+      <div class="agreement">
+        <div class="agreement-title">
+          <img style="height: 12px; margin-right: 8px" src="img/Vector.png" />
+          <p id="agree-content">개인정보 이용 및 수집 동의</p>
+        </div>
+        <textarea rows="10" cols="50"></textarea>
+      </div>
+      <div class="agreement">
+        <div class="agreement-title">
+          <img style="height: 12px; margin-right: 8px" src="img/Vector.png" />
+          <p id="agree-content">서비스이용 약관 동의(선택)</p>
+        </div>
+        <textarea rows="6" cols="50"></textarea>
+      </div>
+      <div class="agreement">
+        <div class="agreement-title">
+          <img style="height: 12px; margin-right: 8px" src="img/Vector.png" />
+          <p id="agree-content">SMS, 이메일 수신 동의</p>
+        </div>
+        <div class="agreement-check">
+          <p style="font-size: 12px; font-weight: bold; margin-right: 5px">
+            SMS 수신 동의하십니까?
+            <input type="radio" name="radio-btn" />동의
+            <input type="radio" name="radio-btn" />동의안함
+          </p>
+        </div>
+        <div class="agreement-check">
+          <p style="font-size: 12px; font-weight: bold; margin-right: 5px">
+            이메일 수신 동의하십니까?
+            <input type="radio" name="radio-btn" />동의
+            <input type="radio" name="radio-btn" />동의안함
+          </p>
+        </div>
+      </div>
+      <div style="margin-top: 20px" class="agreement-check">
+        <label class="checkbox-container">
+          <input type="checkbox" />
+        </label>
+        <p style="font-size: 10px; font-weight: bold">
+          위 전체내용에 동의합니다
+        </p>
+      </div>
+      <div class="agreebtn">
+        <img id="agreebtn" style="width: 80px" src="img/agreebtn.png" />
+      </div>
+    </div>
+  </body>
+
+  <script>
+    //step2로 이동
+    const GotoStep2 = document.getElementById("agreebtn");
+
+    GotoStep2.addEventListener("click", function () {
+      window.location.href = "women-identify2.html";
+    });
+
+    /*
+    const GotoMypage = document.getElementById("gotomypage");
+    const GotoMain = document.getElementById("gotomain");
+    const GotoList = document.getElementById("gotolist");
+
+    GotoMypage.addEventListener("click", function () {
+      window.location.href = "mypage.html";
+    });
+
+    GotoMain.addEventListener("click", function () {
+      window.location.href = "main.html";
+    });
+
+    GotoList.addEventListener("click", function () {
+      window.location.href = "mytrip.html";
+    });
+    */
+  </script>
+</html>

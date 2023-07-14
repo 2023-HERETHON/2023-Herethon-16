@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0px;
+        background-color: #fff9f1;
+      }
+
+      button {
+        border: none;
+        background-color: white;
+      }
+
+      .head-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 15px;
+        background-color: white;
+      }
+
+      .title {
+        color: #ff7777;
+        font-weight: bold;
+        font-size: 23px;
+      }
+
+      .menu-btn {
+        justify-content: flex-end;
+      }
+
+      .btn {
+        color: #ff7777;
+        font-weight: bold;
+        font-size: 19px;
+        margin-left: 20px;
+      }
+
+      .btn:hover {
+        color: #eb4a4a;
+      }
+
+      .main-view {
+        display: flex;
+        padding-top: 80px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="head-menu">
+      <div>
+        <button class="title">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
+    </div>
+
+    <div class="main-view">
+      <img
+        style="
+          display: flex;
+          justify-content: flex-start;
+          width: 500px;
+          margin-left: 30px;
+        "
+        src="img/crimeList.png"
+      />
+    </div>
+  </body>
+
+  <script>
+    const GotoMypage = document.getElementById("gotomypage");
+
+    GotoMypage.addEventListener("click", function () {
+      window.location.href = "mypage.html";
+    });
+  </script>
+</html>
