@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #modal.modal-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.8); /* 투명도가 적용된 배경 */
+      display: none;
+    }
+
+    #modal .title {
+      padding-left: 10px;
+      display: inline;
+      color: black;
+    }
+
+    #modal .content {
+      width: 400px;
+      height: 600px;
+      padding: 25px;
+      color: black;
+      background-color: white;
+    }
+
+    /*상단 메뉴부분*/
+    body {
+      margin: 0px;
+      background-color: #fff9f1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
+
+    .title {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .menu-btn {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
+
+    .btn:hover {
+      color: #eb4a4a;
+    }
+
+    /* identify 시작 */
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 400px;
+      margin-left: 400px;
+      margin-top: 30px;
+    }
+
+    .method-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 40px;
+      height: 250px;
+      background-color: white;
+      border: solid;
+      border-color: #b4b2b2d8;
+      border-radius: 1px;
+    }
+    .method {
+      display: flex;
+      flex-direction: column;
+      width: 224px;
+    }
+
+    .wrapper {
+      padding: 10px;
+    }
+
+    div {
+      padding-top: 3px;
+      padding-bottom: 8px;
+    }
+
+    .title {
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .email input {
+      width: 100%;
+    }
+
+    #name input {
+      width: 100%;
+    }
+
+    .password input {
+      width: 100%;
+    }
+
+    .passwordCheck input {
+      width: 100%;
+    }
+
+    .phone {
+      display: flex;
+      justify-content: space-between;
+      line-height: 35px;
+    }
+
+    #phone1 {
+      width: 18%;
+    }
+
+    #phone2 {
+      width: 30%;
+    }
+
+    #phone3 {
+      width: 30%;
+    }
+
+    .auth {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .auth div {
+      width: 30%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .auth button {
+      width: 70%;
+    }
+
+    .timer div {
+      width: 30%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .timer button {
+      width: 70%;
+    }
+    .gender {
+      text-align: left;
+    }
+
+    .signUp button {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button {
+      cursor: pointer;
+      height: 30px;
+    }
+
+    .agreement-check {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 20px;
+    }
+
+    .checkbox-container {
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .checkbox-custom {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #000;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+  </style>
+
+  <body>
+    <!--상단 메뉴 부분-->
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">FRAVEL</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 style="height: 30px">여성 인증</h1>
+      <hr style="width: 900px; height: 2px; margin-bottom: 10px" />
+      <img style="margin-bottom: 15px" src="img/step2.png" />
+      <!--여성인증 설명내용 담기-->
+      <textarea
+        style="
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+        "
+        rows="12"
+        cols="50"
+      >
+여러분을 환영합니다!
+
+‘Frable’ 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 인증은 여성을 위한 다양한 Frable 서비스의 이용과 관련하여 Frable 서비스를 제공하는 Frable 주식회사(이하 ‘Frable’)와 이를 이용하는 Frable 서비스 여성회원(이하 ‘회원’)과의 관계를 설명하며, 아울러 여러분의 Frable 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+      
+Frable 서비스를 이용하시거나 Frable 서비스 회원으로 가입하실 경우 여러분은 본 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
+      
+    다양한 Frable 서비스를 즐겨보세요.
+
+    (1) 전국 범죄 지도 확인
+    각 카테고리를 선택하면 해당 데이터 값을 기반으로 지도가 재구성됩니다. 지역 위에 마우스 커서를 올리면 데이터 값이 나타납니다. *전국 234개 지역, 인구 만 명당 기준.
+
+    (2) 지역별 범죄 순위 확인
+    여행할 지역의 시, 군, 구 별 범죄 사건 수를 확인해보세요. 자신의 여행지역이 안전한 지, 위험구역은 어디인지 확인하여 안전하게 계획을 세우고 안심하며 여행할 수 있습니다.
+
+    (3) 각 지역 신고센터 제공
+    여행하고 있는 지역의 인근 범죄 신고센터를 확인해보세요. 지도에서 자신의 현 위치에서 가장 가까운 경찰서를 조회하고 위급 시 센터로 즉시 신고할 수 있습니다.</textarea
+      >
+
+      <div class="method-box">
+        <div class="method">
+          <img id="methodBtn1" src="img/methodBtn1.png" />
+        </div>
+        <div
+          style="width: 2px; height: 180px; background-color: #b4b2b2d8"
+          class="vertical-line"
+        ></div>
+        <div class="method">
+          <img id="methodBtn2" src="img/methodBtn2.png" />
+        </div>
+      </div>
+    </div>
+
+    <div id="modal" class="modal-overlay">
+      <div class="content">
+        <div
+          class="phone-title"
+          style="font-size: 25px; margin-top: 10px; font-weight: bold"
+        >
+          휴대폰 인증
+        </div>
+        <div class="name">
+          <h3>이름</h3>
+          <input
+            id="name"
+            type="text"
+            placeholder="이름을 입력해 주세요."
+            style="font-size: 18px"
+          />
+          <div id="nameError" class="error"></div>
+        </div>
+        <div class="gender">
+          <input id="gender_man" type="radio" name="gender" />남성
+          <input id="gender_woman" type="radio" name="gender" />여성
+          <div id="genderError" class="error"></div>
+        </div>
+        <textarea
+          style="
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+          rows="6"
+          cols="46"
+        >
+[서비스 이용약관]
+        제1조 (목적)
+        본 약관은 NICE평가정보(주) (이하 "회사"라 한다)이 제공하는 본인확인서비스(이하 "서비스"라 한다)에 관한 이용조건 및 절차 등 기본적인 사항을 규정함을 목적으로 합니다.
+        제2조 (약관의 효력 및 변경)
+        1. 본 약관은 "이용자"에게 "서비스" 화면에 게시하거나, 기타의 방법으로 공지하는 것으로 효력이 발생합니다.
+        2. "회사"는 약관의 규제에 관한 법률 및 기타 관련 법령에 위배되지 않는 범위에서 본 약관의 내용을 개정할 수 있으며, 변경된 경우에는 제1항과 같은 방법으로 공지합니다. 다만 "이용자"의 권리와 의무에 관한 중요한 사항은 변경된 내용의 시행 15일 이전에 공지합니다.
+        3. "이용자"는 변경된 약관에 대한 내용을 알지 못하여 발생하는 손해 및 피해에 대해서는 "회사"가 책임을 지지 않습니다.
+        제3조 (약관 외 준칙)
+        본 약관에 명시되지 아니한 사항에 대해서는 정보통신망 이용 촉진 및 정보보호 등에 관한 법률등 기타 관련 법령 또는 상관례에 따릅니다.
+        제4조 (용어의 정의)
+        본 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+        1. "본인확인서비스"라 함은 "이용자"가 인터넷상에서 휴대폰 등의 인증수단을 이용하여, 본인임을 안전하게 식별 및 확인해 주는 서비스를 말합니다.
+        2. "이용자"라 함은 "회사"에서 제공하는 "서비스"의 이용을 위해 자신의 "본인확인정보"를 "회사" 및 "본인확인기관" 등에게 제공하고, 본인임을 확인 받고자 하는 자를 말합니다.
+        3. "본인확인정보"라 함은 "이용자"가 입력한 생년월일, 성별, 성명, 내/외국인, 휴대폰번호, 통신사 등 본인 식별에 필요한 "이용자"의 정보를 말합니다.
+        4. "본인확인기관"이라 함은 주민등록번호를 사용하지 아니하고 본인을 확인하는 방법 또는 서비스를 제공하는 자로 방송통신위원회로부터 본인확인기관으로 지정을 받은 자를 의미합니다.
+        5. "인터넷사업자"라 함은 인터넷을 이용하여 정보를 제공하거나, 정보의 제공을 매개하는 일을 업으로 하는 자로 "회사"와 계약을 통해 운영하며, 인터넷 웹사이트의 "이용자"에 대한 "본인확인정보"를 제공 받는 사업체를 말합니다.
+        6. "중복가입확인정보"라 함은 웹사이트에 가입하고자 하는 이용자의 중복 확인을 위해 제공되는 정보를 말합니다.
+        7. "연계정보" 라 함은 "인터넷사업자"의 온ㆍ오프라인 서비스 연계 등의 목적으로 "이용자"를 식별하기 위해 제공되는 정보를 말합니다.</textarea
+        >
+        <div class="agreement-check">
+          <label class="checkbox-container">
+            <input type="checkbox" />
+          </label>
+          <p style="font-size: 15px">위 전체내용에 동의합니다</p>
+        </div>
+        <div style="margin-top: 25px" class="phone">
+          <input
+            id="phone1"
+            type="text"
+            size="1"
+            maxlength="3"
+            oninput="changePhone1()"
+          />
+          -
+          <input
+            id="phone2"
+            type="text"
+            size="3"
+            maxlength="4"
+            oninput="changePhone2()"
+          />
+          -
+          <input
+            id="phone3"
+            type="text"
+            size="3"
+            maxlength="4"
+            oninput="changePhone3()"
+          />
+        </div>
+
+        <div style="margin-top: 20px" class="auth">
+          <div id="certificationNumber">000000</div>
+          <button disabled id="sendMessage" onclick="getToken()">
+            인증번호 전송
+          </button>
+        </div>
+        <div class="timer">
+          <div id="timeLimit">03:00</div>
+          <button disabled id="completion" onclick="checkCompletion()">
+            인증확인
+          </button>
+        </div>
+        <div style="margin-top: 25px" class="signUp">
+          <button id="signUpButton" disabled onclick="signUpCheck()">
+            가입하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    //휴대폰인증 모달창 띄우기
+    const modal = document.getElementById("modal");
+    const btnModal = document.getElementById("methodBtn1");
+    btnModal.addEventListener("click", (e) => {
+      modal.style.display = "flex";
+    });
+    //모달 영역 외의 오버레이 클릭시 꺼지는 이벤트
+    modal.addEventListener("click", (e) => {
+      const evTarget = e.target;
+      if (evTarget.classList.contains("modal-overlay")) {
+        modal.style.display = "none";
+      }
+    });
+
+    // 휴대폰 번호 입력 부분
+    function changePhone1() {
+      const phone1 = document.getElementById("phone1").value; // 010
+      if (phone1.length === 3) {
+        document.getElementById("phone2").focus();
+      }
+    }
+    function changePhone2() {
+      const phone2 = document.getElementById("phone2").value; // 010
+      if (phone2.length === 4) {
+        document.getElementById("phone3").focus();
+      }
+    }
+    function changePhone3() {
+      const phone3 = document.getElementById("phone3").value; // 010
+      if (phone3.length === 4) {
+        document.getElementById("sendMessage").focus();
+        document
+          .getElementById("sendMessage")
+          .setAttribute("style", "background-color:#818181;");
+        document.getElementById("sendMessage").disabled = false;
+      }
+    }
+    // 문자인증+타이머 부분
+    function initButton() {
+      document.getElementById("sendMessage").disabled = true;
+      document.getElementById("completion").disabled = true;
+      document.getElementById("certificationNumber").innerHTML = "000000";
+      document.getElementById("timeLimit").innerHTML = "03:00";
+      document
+        .getElementById("sendMessage")
+        .setAttribute("style", "background-color:none;");
+      document
+        .getElementById("completion")
+        .setAttribute("style", "background-color:none;");
+    }
+
+    let processID = -1;
+
+    const getToken = () => {
+      // 인증확인 버튼 활성화
+      document
+        .getElementById("completion")
+        .setAttribute("style", "background-color:#818181;");
+      document.getElementById("completion").disabled = false;
+
+      if (processID != -1) clearInterval(processID);
+      const token = String(Math.floor(Math.random() * 1000000)).padStart(
+        6,
+        "0"
+      );
+      document.getElementById("certificationNumber").innerText = token;
+      let time = 180;
+      processID = setInterval(function () {
+        if (time < 0 || document.getElementById("sendMessage").disabled) {
+          clearInterval(processID);
+          initButton();
+          return;
+        }
+        let mm = String(Math.floor(time / 60)).padStart(2, "0");
+        let ss = String(time % 60).padStart(2, "0");
+        let result = mm + ":" + ss;
+        document.getElementById("timeLimit").innerText = result;
+        time--;
+      }, 50);
+    };
+
+    function checkCompletion() {
+      alert("문자 인증이 완료되었습니다.");
+      initButton();
+      document.getElementById("completion").innerHTML = "인증완료";
+      document.getElementById("signUpButton").disabled = false;
+      document
+        .getElementById("signUpButton")
+        .setAttribute("style", "background-color:#818181;");
+    }
+
+    //step3로 이동
+    const GotoStep3 = document.getElementById("signUpButton");
+
+    GotoStep3.addEventListener("click", function () {
+      window.location.href = "women_identify3.html";
+    });
+  </script>
+</html>

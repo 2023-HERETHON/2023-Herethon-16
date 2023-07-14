@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,7 +70,7 @@
     </div>
 
     <div style="display: flex; justify-content: center; margin: 150px">
-      <img src="img/aboutfravel.png" style="width: 1000px" />
+      <img src="{% static 'img/aboutfravel.png' %}" style="width: 1000px" />
     </div>
 
     <hr style="width: 600px" />
@@ -82,9 +83,18 @@
         margin-bottom: 50px;
       "
     >
-      <img src="img/about1.png" style="width: 270px; padding: 50px" />
-      <img src="img/about2.png" style="width: 270px; padding: 50px" />
-      <img src="img/about3.png" style="width: 270px; padding: 50px" />
+      <img
+        src="{% static 'img/about1.png' %}"
+        style="width: 270px; padding: 50px"
+      />
+      <img
+        src="{% static 'img/about2.png' %}"
+        style="width: 270px; padding: 50px"
+      />
+      <img
+        src="{% static 'img/about3.png' %}"
+        style="width: 270px; padding: 50px"
+      />
     </div>
 
     <hr style="width: 600px" />
@@ -97,7 +107,7 @@
         margin-bottom: 200px;
       "
     >
-      <img src="/img/about4.png" style="width: 700px" />
+      <img src="{% static 'img/about4.png' %}" style="width: 700px" />
     </div>
 
     <footer style="background-color: #b9b9b9; padding: 50px">

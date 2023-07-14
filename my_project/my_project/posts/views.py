@@ -14,7 +14,7 @@ def Community(request) :
     return render(request, 'Community.html')
 
 def WomenZone(request) :
-    return render(request, 'Women-zone.html')
+    return render(request, 'women_main.html')
 
 def Post_list(request):
     postlist = Post.objects.all().order_by('-pk')

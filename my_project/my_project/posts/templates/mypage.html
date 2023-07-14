@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %}마이페이지{% block content %}
 <!--전체 콘텐츠 부분-->
 <div class="mypage-content">
   <!--Me-->
@@ -6,12 +6,10 @@
     <div style="display: flex; justify-content: space-between">
       <h1>Me</h1>
       <button class="sub-btn"><a href="{% url 'logout' %}">Logout</a></button>
-      <a href="{% url 'posts:mypage_info' %}">수정하기</a>
     </div>
     <hr />
     <div class="container-me">
-      <p>사진띄워</p>
-      <img src="{{ userInfo.profile.url }}" class="profile-img" />
+      <img src="{% static 'img/profile.png' %}" class="profile-img" />
       <div style="margin-left: 20px">
         <p
           style="
@@ -23,30 +21,13 @@
         >
           {{ user.username }}
         </p>
-        <p style="color: #acacac; font-weight: bold">{{ userInfo.info }}</p>
+        <p style="color: #acacac; font-weight: bold">여행을 좋아하는 대학생</p>
         <div>
-          <button class="trip-btn">{{ userInfo.travel_place }}</button>
-          <!--
-                            <button class="trip-btn">여수</button>
-                            <button class="trip-btn">경주</button>
-                            -->
+          <button class="trip-btn">군산</button>
+          <button class="trip-btn">여수</button>
+          <button class="trip-btn">경주</button>
         </div>
       </div>
-      <!--
-                    <p>사진 띄우지마</p>
-                    <img src="http://via.placeholder.com/64x64" class="profile-img">
-                    <div style="margin-left: 20px;">
-                        <p style="color: #77A5FF; font-weight: bold; font-size: 25px; margin-bottom: 10px;" >{{ user.username }}</p>
-                        <p style="color: #ACACAC; font-weight: bold">자신을 한줄로 소개해보세요!</p>
-                        <div>
-                            <button class="trip-btn">다녀온 여행지를 추가해보세요!</button>
-                            
-                            <button class="trip-btn">여수</button>
-                            <button class="trip-btn">경주</button>
-                       
-                        </div>
-                    </div>
-                -->
     </div>
   </div>
 
@@ -54,7 +35,7 @@
   <div style="margin-bottom: 50px">
     <div style="display: flex; justify-content: space-between">
       <h1>My trip</h1>
-      <a href="{% url 'posts:postlist'%}"
+      <a href="{% url 'posts:postlist' %}"
         ><button class="sub-btn">더보기</button></a
       >
     </div>

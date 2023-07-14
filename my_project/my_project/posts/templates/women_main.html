@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0px;
+        background-color: #fff9f1;
+      }
+
+      button {
+        border: none;
+        background-color: white;
+      }
+
+      .head-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 15px;
+        background-color: white;
+      }
+
+      .title {
+        color: #FF7777;
+        font-weight: bold;
+        font-size: 23px;
+      }
+
+      .menu-btn {
+        justify-content: flex-end;
+      }
+
+      .btn {
+        color: #FF7777;
+        font-weight: bold;
+        font-size: 19px;
+        margin-left: 20px;
+      }
+
+      .btn:hover {
+        color: #eb4a4a;
+      }
+
+      .main-view {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 80px;
+      }
+
+      .container{
+        margin-top: 100px;
+      }
+
+      #mainTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+    img {
+    width: 300px;
+    height: auto;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">서비스명</button>
+      </div>
+      <div class="menu-btn">
+        <a href="{% url 'posts:aboutus' %}"
+          ><button class="btn">About us</button></a
+        >
+        <a href="{% url 'posts:community' %}"
+          ><button class="btn">Community</button></a
+        >
+        <a href="{% url 'posts:womenzone' %}"
+          ><button class="btn">Women-zone</button></a
+        >
+        <a href="{% url 'posts:mypage' %}"
+          ><button class="btn">My page</button></a
+        >
+      </div>
+    </div>
+
+    <div class="container">
+
+            <p id="mainTitle">save your trip</p>
+
+        <div class="main-view">
+              <div class="categories">
+                <img id="main1" style="position: relative; right: 100px" src="img/여성존main1.png" />
+                <img id="main2" style="position: static;" src="img/여성존main2.png" />
+                <img id="main3" style="position: relative; left: 100px" src="img/여성존main3.png" />
+                </div>
+              </div>
+        </div>
+    </div>
+    
+  </body>
+
+  <script>
+    const GotoIdentify = document.getElementById("main1");
+    const GotoCrimeRecord = document.getElementById("main2");
+    const GotoReportCrime = document.getElementById("main3");
+
+    GotoIdentify.addEventListener("click", function () {
+    window.location.href = "women_identify1.html";
+    });
+    GotoCrimeRecord.addEventListener("click", function () {
+    window.location.href = "crimeMap.html";
+    });
+    GotoReportCrime.addEventListener("click", function () {
+    window.location.href = "crimeReport.html";
+    });
+  </script>
+</html>

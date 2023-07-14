@@ -149,25 +149,31 @@
       <div style="margin-bottom: 50px">
         <div style="display: flex; justify-content: space-between">
           <h1>My trip</h1>
-          <a href="{% url 'posts:write' %}"><button class="sub-btn" id="gotodetail">+</button></a>
+          <a href="{% url 'posts:write' %}"
+            ><button class="sub-btn" id="gotodetail">+</button></a
+          >
         </div>
         <hr />
         {% for p in postlist %}
         <div class="mytrip-content-card">
-            <div class="container-mytrip">
-              <div>
-                <img src="{{p.head_image.url}}" class="trip-img" />
-              </div>
-              <div>
-                <p style="color: #77a5ff; font-weight: bold; font-size: 17px"><a href="{{ p.get_absolute_url}}" style="text-decoration: None; color:#77a5ff;">
-                  {{ p.title }}</a>
-                </p>
-                <p style="color: #acacac; font-weight: bold; font-size: 14px">
-                  {{ p.startPeriod }} - {{ p.endPeriod }}
-                </p>
-              </div>
+          <div class="container-mytrip">
+            <div>
+              <img src="{{p.head_image.url}}" class="trip-img" />
             </div>
-          </a>
+            <div>
+              <p style="color: #77a5ff; font-weight: bold; font-size: 17px">
+                <a
+                  href="{{ p.get_absolute_url}}"
+                  style="text-decoration: None; color: #77a5ff"
+                >
+                  {{ p.title }}</a
+                >
+              </p>
+              <p style="color: #acacac; font-weight: bold; font-size: 14px">
+                {{ p.startPeriod }} - {{ p.endPeriod }}
+              </p>
+            </div>
+          </div>
 
           {% comment %}
           <button class="post-btn">

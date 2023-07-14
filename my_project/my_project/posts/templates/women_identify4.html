@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    /*상단 메뉴부분*/
+    body {
+      margin: 0px;
+      background-color: #fff9f1;
+    }
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .head-menu {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      background-color: white;
+    }
+
+    .title {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 23px;
+    }
+
+    .menu-btn {
+      justify-content: flex-end;
+    }
+
+    .btn {
+      color: #ff7777;
+      font-weight: bold;
+      font-size: 19px;
+      margin-left: 20px;
+    }
+
+    .btn:hover {
+      color: #eb4a4a;
+    }
+
+    /* identify 시작 */
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-right: 400px;
+      margin-left: 400px;
+      margin-top: 30px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .GotoCrime {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+  </style>
+
+  <body>
+    <!--상단 메뉴 부분-->
+    <div class="head-menu">
+      <div>
+        <button class="title" id="gotomain">FRAVEL</button>
+      </div>
+      <div class="menu-btn">
+        <button class="btn">About us</button>
+        <button class="btn">Community</button>
+        <button class="btn">Women-zone</button>
+        <button class="btn" id="gotomypage">My page</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 style="height: 30px">여성 인증</h1>
+      <hr style="width: 900px; height: 2px; margin-bottom: 10px" />
+      <img style="margin-bottom: 15px" src="img/step4.png" />
+      <div class="content">
+        <img
+          style="margin-top: 50px; margin-left: 390px; width: 150px"
+          src="img/check.png"
+        />
+        <img
+          style="margin-top: 30px; margin-left: 250px; width: 400px"
+          src="img/completeMessage.png"
+        />
+        <div class="GotoCrime">
+          <img id="GotoCrime" style="width: 250px" src="img/GotoCrime.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    //페이지 이동
+    const GotoCrime = document.getElementById("GotoCrime");
+
+    GotoCrime.addEventListener("click", function () {
+      window.location.href = "crimeMap.html";
+    });
+  </script>
+</html>
